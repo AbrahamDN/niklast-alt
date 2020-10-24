@@ -1,16 +1,21 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { Container } from "@material-ui/core";
 import "./App.css";
 
-import Homepage from "./pages/homepage.page";
+import Homepage from "./pages/Homepage/homepage.page";
+import LoginPage from "./pages/Login/login.page";
+import RegisterPage from "./pages/Register/register.page";
 
 function App() {
   return (
-    <div className="App">
+    <Container maxWidth="sm" className="App">
       <Switch>
-        <Route path="/" component={Homepage} />
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/register" component={RegisterPage} />
       </Switch>
-    </div>
+    </Container>
   );
 }
 
